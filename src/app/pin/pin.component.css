@@ -1,0 +1,25 @@
+.rectangle {
+  width: 320px;
+  padding: 10px;
+  border: 5px solid gray;
+  margin: 0;
+  height: 200px;
+}
+.tableContainer {
+  width: 300px;
+}
+.set div {
+  margin-bottom: 20px;
+}
+.button-view button {
+  margin: 10px;
+}
+.ButtonSearch .btn-primary{
+  margin-left: 150px;
+}
+.cont {
+  width: 95%;
+}
+ /*.btn-danger{*/
+  /*margin-left: 150px;*/
+/*}*/

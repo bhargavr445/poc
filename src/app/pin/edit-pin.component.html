@@ -1,0 +1,53 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8
+                col-sm-offset-1 col-md-offset-2">
+      <form [formGroup]="editStudentForm" (ngSubmit)="editData()">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text"
+                 id="name"
+                 name="name"
+                 formControlName="name"
+                 class="form-control" disabled >
+        </div>
+        <div class="form-group">
+          <label for="period">Period:</label>
+          <input type="text"
+                 id="period"
+                 name="period"
+                 formControlName="period"
+                 class="form-control" >
+        </div>
+        <div class="form-group">
+          <label for="state">State:</label>
+          <input type="text"
+                 id="state"
+                 name="state"
+                 formControlName="state"
+                 class="form-control" >
+        </div>
+        <div class="form-group">
+          <label for="userName">User Name:</label>
+          <input type="userName"
+                 id="userName"
+                 name="userName"
+                 formControlName="userName"
+                 class="form-control" >
+        </div>
+        <div class="form-group">
+          <label for="modification">Modification:</label>
+          <input type="text"
+                 id="modification"
+                 name="modification"
+                 formControlName="modification"
+                 class="form-control" >
+        </div>
+        <button class="btn btn-primary" type="submit">Submit New Student</button>
+        <!-- <button class="btn btn-danger" type="submit" (click)="hideStudentForm()">cancel</button> -->
+        <!--<button class="btn btn-danger" type="Reset" (click)="reset()">Reset</button>-->
+      </form>
+    </div>
+  </div>
+</div>
+
