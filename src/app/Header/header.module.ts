@@ -5,9 +5,9 @@ import { HttpModule } from '@angular/http';
 import { HeaderRoutingModule } from './header-routing.module';
 import {HeaderComponent} from './header.component';
 import { SecurityComponent } from '../security/security.component';
-import { PinComponent } from '../pin/pin.component';
+import { PinComponent } from '../pin/subscription.component';
 import {MouseOverDirective} from '../directives/mouse-over.directive';
-import { EditPinComponent } from '../pin/edit-pin.component';
+import { EditSubscriptionComponent } from '../pin/edit-subscription.component';
 
 
 @NgModule({
@@ -15,6 +15,6 @@ import { EditPinComponent } from '../pin/edit-pin.component';
     CommonModule,
     HeaderRoutingModule,
    FormsModule, ReactiveFormsModule],
-  declarations: [HeaderComponent, SecurityComponent, PinComponent, MouseOverDirective, EditPinComponent]
+  declarations: [HeaderComponent, SecurityComponent, PinComponent, MouseOverDirective, EditSubscriptionComponent]
 })
 export class HeaderModule { }

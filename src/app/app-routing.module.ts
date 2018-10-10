@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import {CommonModule} from '@angular/common';
 
 const appRoutes: Routes = [
-  { path: 'header',
+  { path: 'poc',
     loadChildren: './Header/header.module#HeaderModule'
   },
   { path: 'student',

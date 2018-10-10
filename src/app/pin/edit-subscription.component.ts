@@ -1,19 +1,19 @@
 import { Component, OnInit } from '@angular/core';
-import { Subscription } from 'rxjs';
 import {SharedService} from '../shared.service';
-import {Student} from '../models/student';
+import {Subscriptions} from '../models/subscriptions';
 import {FormGroup, FormControl} from '@angular/forms';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import {HeaderService} from '../Header/header.service';
+import { Subscription } from 'rxjs/Subscription';
 @Component({
   selector: 'app-edit-pin',
-  templateUrl: './edit-pin.component.html',
-  styleUrls: ['./edit-pin.component.css']
+  templateUrl: './edit-subscription.component.html',
+  styleUrls: ['./edit-subscription.component.css']
 })
-export class EditPinComponent implements OnInit {
+export class EditSubscriptionComponent implements OnInit {
   editStudentForm: FormGroup;
-  updatedStudent: Subscription;
-  newStudent: Student;
+  updatedStudent: Subscriptions;
+  newStudent: Subscriptions;
   name: string;
   subscribeParams: Subscription;
   constructor(private sharedService: SharedService, private service: HeaderService, private route: ActivatedRoute,
@@ -54,12 +54,12 @@ export class EditPinComponent implements OnInit {
 this.service.updateSubscription(this.editStudentForm.value).subscribe(
   (data) => {
     console.log(data);
-    this.router.navigate(['header/pin'],
+    this.router.navigate(['poc/subscription'],
       {fragment: 'true'});
   }
 );
   }
-  init(stud: Student) {
+  init(stud: Subscriptions) {
     // const studentReset = JSON.parse(JSON.stringify(stu));
     this.editStudentForm.setValue({
       name: stud.name,

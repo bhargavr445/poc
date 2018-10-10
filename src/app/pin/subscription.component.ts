@@ -2,23 +2,21 @@ import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, ReactiveFormsModule} from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import {HeaderService} from '../Header/header.service';
-import {Student} from '../models/student';
+import {Subscriptions} from '../models/subscriptions';
 import {SharedService} from '../shared.service';
 declare var $;
 @Component({
   selector: 'app-pin',
-  templateUrl: './pin.component.html',
-  styleUrls: ['./pin.component.css']
+  templateUrl: './subscription.component.html',
+  styleUrls: ['./subscription.component.css']
 })
 export class PinComponent implements OnInit {
-
-  constructor(private service: HeaderService, private sharedService: SharedService, private router: Router,  private route: ActivatedRoute,) {
-
+   constructor(private service: HeaderService, private sharedService: SharedService, private router: Router,  private route: ActivatedRoute) {
   }
   searchForm: FormGroup;
   createRecord: FormGroup;
   display = 'none';
-  students: Student[];
+  students: Subscriptions[];
   createdStatus: any;
   countries: string[] = ['HBO', 'PROMO', 'TEST', 'DATA'];
   defaultValue:  'UK';
@@ -63,13 +61,11 @@ export class PinComponent implements OnInit {
     );
   }
 
-  editEmployee(student: Student) {
+  editEmployee(student: Subscriptions) {
     console.log(student);
   }
 
-   getRecordDetails(stu: Student) {
-    console.log(stu);
-  }
+
   openModal() {
     this.display = 'block';
   }
@@ -81,7 +77,7 @@ export class PinComponent implements OnInit {
   }
   editData(name: string) {
     // this.sharedService.editData(stu);
-    this.router.navigate(['header/edit-pin', name]);
+    this.router.navigate(['poc/subscription-pin', name]);
 
   }
   createData() {
@@ -98,5 +94,6 @@ export class PinComponent implements OnInit {
   }
   cancelForm() {
     this.searchForm.reset();
+
   }
 }

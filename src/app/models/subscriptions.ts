@@ -1,4 +1,4 @@
-export class Student    {
+export class Subscriptions    {
   name: string;
   period: string;
   state: string;

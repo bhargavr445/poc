@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PinComponent } from './pin.component';
+import { PinComponent } from './subscription.component';
 
 describe('PinComponent', () => {
   let component: PinComponent;
