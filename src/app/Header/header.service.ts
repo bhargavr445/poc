@@ -17,7 +17,6 @@ export class HeaderService {
   createData(subscription: Subscriptions): Observable<any> {
     return this.http.post<any>('http://localhost:8080/poc/createSubscription', subscription);
      // .pipe(catchError()
-
   }
   getAllData(): Observable<Subscriptions[]> {
     return this.http.get<Subscriptions[]>('http://localhost:8080/poc/getById/1');

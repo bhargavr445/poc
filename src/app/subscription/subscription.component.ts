@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl, FormGroup, ReactiveFormsModule} from '@angular/forms';
+import {FormControl, FormGroup, FormArray, ReactiveFormsModule} from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import {HeaderService} from '../Header/header.service';
 import {Subscriptions} from '../models/subscriptions';
@@ -14,6 +14,8 @@ export class PinComponent implements OnInit {
    constructor(private service: HeaderService, private sharedService: SharedService, private router: Router,  private route: ActivatedRoute) {
   }
   searchForm: FormGroup;
+  displays = false;
+  selectedBoxes: string[];
   createRecord: FormGroup;
   display = 'none';
   students: Subscriptions[];
@@ -25,7 +27,11 @@ export class PinComponent implements OnInit {
       'id': new FormControl(null),
       'from': new FormControl(null),
       'to': new FormControl(null),
-      'country': new FormControl(this.countries[0])
+      'country': new FormControl(this.countries[0]),
+      'active':  new FormControl(false),
+        'suspended': new FormControl(false),
+      'implemented':  new FormControl(false),
+      'reversed': new FormControl(false)
     });
 
     this.createRecord = new FormGroup({
@@ -71,13 +77,14 @@ export class PinComponent implements OnInit {
   }
   onCloseHandled() {
     this.display = 'none';
+    this.displays = false;
   }
   addData() {
     this.display = 'none';
   }
   editData(name: string) {
     // this.sharedService.editData(stu);
-    this.router.navigate(['poc/subscription-pin', name]);
+    this.router.navigate(['poc/subscription-subscription', name]);
 
   }
   createData() {
@@ -87,7 +94,7 @@ export class PinComponent implements OnInit {
         this.createdStatus = data;
         this.onEdit();
       });
-    this.display = 'none';
+    this.displays = false;
   }
   getAllRecords() {
     this.service.getAllData().subscribe();
@@ -95,5 +102,8 @@ export class PinComponent implements OnInit {
   cancelForm() {
     this.searchForm.reset();
 
+  }
+  showDialog() {
+    this.displays = true;
   }
 }
