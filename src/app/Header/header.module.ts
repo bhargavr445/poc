@@ -10,7 +10,7 @@ import { PinComponent } from '../subscription/subscription.component';
 import {MouseOverDirective} from '../directives/mouse-over.directive';
 import { EditSubscriptionComponent } from '../subscription/edit-subscription.component';
 import {DataTableModule, DropdownModule, ButtonModule, CheckboxModule, CalendarModule, ChipsModule, DialogModule} from 'primeng/primeng';
-
+import {TableModule} from 'primeng/table';
 
 
 @NgModule({
@@ -26,6 +26,7 @@ import {DataTableModule, DropdownModule, ButtonModule, CheckboxModule, CalendarM
     CheckboxModule,
     CalendarModule,
     ChipsModule,
+    TableModule,
    // BrowserAnimationsModule,
    FormsModule, ReactiveFormsModule],
   declarations: [HeaderComponent, SecurityComponent, PinComponent, MouseOverDirective, EditSubscriptionComponent]

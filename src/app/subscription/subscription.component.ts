@@ -11,7 +11,7 @@ declare var $;
   styleUrls: ['./subscription.component.css']
 })
 export class PinComponent implements OnInit {
-   constructor(private service: HeaderService, private sharedService: SharedService, private router: Router,  private route: ActivatedRoute) {
+  constructor(private service: HeaderService, private sharedService: SharedService, private router: Router,  private route: ActivatedRoute) {
   }
   searchForm: FormGroup;
   displays = false;
